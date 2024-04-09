@@ -1,32 +1,9 @@
-# Prerequisites
-*.d
+*.gem
+.bundle
+.jekyll-cache
+.sass-cache
+_site
+.jekyll-metadata
+vendor
+Gemfile.lock
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
