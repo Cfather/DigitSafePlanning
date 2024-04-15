@@ -1,10 +1,10 @@
 ---
 # Front matter. This is where you specify a lot of page variables.
 layout: default
-title:  "SPARROWS"
-date:   2024-02-13 10:00:00 -0500
+title:  "Digit Safe Planning"
+date:   2024-04-14 21:00:00 -0500
 description: >- # Supports markdown
-  Safe Planning for Articulated Robots Using Reachability-based Obstacle Avoidance With Spheres
+  Provably-Safe, Real-time Planning & Control For Bipedal Robots Using Reachability-Based Trajectory Design
 show-description: true
 
 # Add page-specifi mathjax functionality. Manage global setting in _config.yml
@@ -15,21 +15,13 @@ autoanchor: false
 
 # Preview image for social media cards
 image:
-  path: /assets/main_fig_compressed.jpg
-  height: 600
+  path: ./assets/SafeDigit-Summary-3.0.png
+  height: 285
   width: 800
-  alt: SPARROWS Main Figure - 2-arm Planning
+  alt: SafeDigit Main Figure
 
 # Only the first author is supported by twitter metadata
 authors:
-  - name: Jonathan Michaux
-    email: jmichaux@umich.edu
-  - name: Adam Li
-    email: adamli@umich.edu
-  - name: Qingyi Chen
-    email: chenqy@umich.edu
-  - name: Che Chen
-    email: cctom@umich.edu
   - name: Bohao Zhang
     email: jimzhang@umich.edu
   - name: Ram Vasudevan
@@ -38,7 +30,7 @@ authors:
 # If you just want a general footnote, you can do that too.
 # See the sel_map and armour-dev examples.
 author-footnotes:
-  All authors affiliated with the department of Mechanical Engineering and Department of Robotics of the University of Michigan, Ann Arbor.
+  All authors affiliated with the Robotics Institute of the University of Michigan, Ann Arbor.
 
 links:
   - icon: arxiv
@@ -47,23 +39,26 @@ links:
     url: https://arxiv.org/abs/2402.08857
   - icon: github
     icon-library: simpleicons
-    text: Code
-    url: https://github.com/roahmlab/sparrows
+    text: Code (Trajectory Optimization)
+    url: https://github.com/roahmlab/IDTO
+  - icon: github
+    icon-library: simpleicons
+    text: Code (Planning)
+    url: https://github.com/roahmlab/SafeDigit
 
 # End Front Matter
 ---
 
 <!-- BEGIN DOCUMENT HERE -->
 
-{% include sections/authors %}
-{% include sections/links %}
-
 ---
 
-# [Overview Videos](#overview-videos)
+# [Overview](#overview)
+
+![reachable set construction](./assets/SafeDigit-Summary-3.0.png)
 
 <!-- BEGIN OVERVIEW VIDEOS -->
-<div class="fullwidth video-container" style="flex-wrap:nowrap; padding: 0 0.2em">
+<!-- <div class="fullwidth video-container" style="flex-wrap:nowrap; padding: 0 0.2em">
   <div class="video-item" style="min-width:0;">
     <video
       class="autoplay-on-load"
@@ -74,11 +69,11 @@ links:
       muted
       loop
       style="display:block; width:100%; height:auto;"
-      poster="assets/thumb/sparrows_single_arm_demo.jpg">
-      <source src="assets/sparrows_single_arm_demo.mp4" type="video/mp4">
+      poster="assets/thumb/SafeDigit_single_arm_demo.jpg">
+      <source src="assets/SafeDigit_single_arm_demo.mp4" type="video/mp4">
       Your browser does not support this video.
     </video>
-    <p>SPARROWS performing single arm planning </p>
+    <p>SafeDigit performing single arm planning </p>
   </div>
   <div class="video-item" style="min-width:0;">
     <video
@@ -90,38 +85,27 @@ links:
       muted
       loop
       style="display:block; width:100%; height:auto;"
-      poster="assets/thumb/sparrows_two_arm_demo.jpg">
-      <source src="assets/sparrows_two_arm_demo.mp4" type="video/mp4">
+      poster="assets/thumb/SafeDigit_two_arm_demo.jpg">
+      <source src="assets/SafeDigit_two_arm_demo.mp4" type="video/mp4">
       Your browser does not support this video.
     </video>
-    <p>SPARROWS performing two arm planning </p>
+    <p>SafeDigit performing two arm planning </p>
   </div>
-</div> <!-- END OVERVIEW VIDEOS -->
+</div>  -->
+<!-- END OVERVIEW VIDEOS -->
 
 <!-- BEGIN ABSTRACT -->
 <div markdown="1" class="content-block justify grey">
 
 # [Abstract](#abstract)
-Generating safe motion plans in real-time is necessary for the wide-scale
-deployment of robots in unstructured and human-centric environments. These
-motion plans must be safe to ensure humans are not harmed and nearby objects are
-not damaged. However, they must also be generated in realtime to ensure the
-robot can quickly adapt to changes in the environment. Many trajectory
-optimization methods introduce heuristics that trade-off safety and real-time
-performance, which can lead to potentially unsafe plans. This paper addresses
-this challenge by proposing Safe Planning for Articulated Robots Using
-Reachability-based Obstacle Avoidance With Spheres (SPARROWS). SPARROWS is a
-receding-horizon trajectory planner that utilizes the combination of a novel
-reachable set representation and an exact signed distance function to generate
-provably-safe motion plans. At runtime, SPARROWS uses parameterized trajectories
-to compute reachable sets composed entirely of spheres that overapproximate the
-swept volume of the robot’s motion. SPARROWS then performs trajectory
-optimization to select a safe trajectory that is guaranteed to be
-collision-free. We demonstrate that SPARROWS’ novel reachable set is
-significantly less conservative than previous approaches.  We also demonstrate
-that SPARROWS outperforms a variety of state-of-the-art methods in solving
-challenging motion planning tasks in cluttered environments. Code will be
-released upon acceptance of this manuscript.
+To operate robustly in uncertain environments with a finite sensor horizon, bipedal robots must be able to perform receding horizon trajectory planning in concert with rapid control synthesis. 
+Unfortunately, creating safe and dynamically-feasible trajectories for high-dimensional bipedal robotic systems in real-time is challenging. 
+As a result, most existing approaches make an undesirable trade-off between model fidelity and planning speed thereby sacrificing safety.
+To avoid this undesirable trade-off, this paper describes a method for offline generation of a continuum of multi-step reference trajectories that can then be optimizing over at run-time to identify trajectories that can be followed by a bipedal walking robot in a provably safe fashion (i.e., without running into obstacles or falling). 
+To accomplish this objective, this paper presents a robust controller that provides an ultimate bound on the maximum tracking error while following any reference trajectory. 
+At runtime and during each planning , the proposed method constructs a reachable set of the entire robot and intersects it with obstacles to generate sub-differentiable and provably conservative collision avoidance constraints. 
+This enables trajectory optimization for an arbitrary cost function subject to these constraints. 
+This proposed method consistently outperforms state-of-the-art methods during simulation experiments on a 20-degree-of-freedom bipedal robot Digit.
 
 </div> <!-- END ABSTRACT -->
 
@@ -130,23 +114,27 @@ released upon acceptance of this manuscript.
 
 # [Method](#method)
 
-![link_construction](./assets/sfo_link_construction.png)
-{: class="fullwidth"}
-
 <!-- # Contributions -->
-To address the limitations of existing approaches, this paper proposes Safe
-Planning for Articulated Robots Using Reachability-based Obstacle Avoidance With
-Spheres (SPARROWS). The proposed method combines reachability analysis with
-sphere-based collision primitives and an exact signed distance function to
-enable real-time motion planning that is certifiably-safe, yet less conservative
-than previous methods. This paper’s contributions are three-fold:
-1. A novel reachable set representation composed of over- lapping spheres,
-   called the Spherical Forward Occupancy (SFO), that overapproximates the
-   robot’s reachable set and is differentiable;
-2. An algorithm that computes the exact signed distance between a point and a
-   three dimensional zonotope;
-3. A demonstration that SPARROWS outperforms similar state-of-the-art methods on
-   a set of challenging motion planning tasks
+As illustrated in the overview figure, this paper proposes a receding horizon control synthesis method that constructs a trajectory-parameterized reachable set of a bipedal robot over one walking step. 
+During online operation, this paper describes how to construct a numerical optimization problem to identify a trajectory that ensures that the biped does not fall over or collide with any obstacles. 
+Due to the application of the reachable set within the optimization problem, any feasible solution to the optimization problem can be realized on the biped in a provably safe fashion.
+In particular, this paper describes the construction and application of a robust control input to track numerically computed trajectories with bounded tracking error under model uncertainty. 
+To ensure that this optimization problem can be solved rapidly, this paper describes how to compute numerical derivatives for all relevant components of the optimization problem. 
+
+This paper's contributions are four-fold:
+1. A trajectory optimization algorithm based on inverse dynamics that generates periodic gaits and both converges faster and compute faster. 
+2. An approach to compute trajectory-parameterized outer approximations of reachable sets that describe a bipedal robot's enclosure over time and over multiple steps while ensuring that this representation is differentiable.
+3. A robust controller for a bipedal robot whose performance is proven to be ultimately bounded given model uncertainty.
+4. An optimization-based planning algorithm that is illustrated in simulation to enable real-time safe navigation of high dimensional biped through complex environments. 
+
+![reachable set construction](./assets/reachset-demo.jpg)
+This figure demonstrates how we construct the reachable set on the lower limbs of Digit step by step. The first figure shows the reachable set of two joints in one time interval, constructed by Theorem \ref{thm-reachset-joint}. The second figure shows the reachable set of the link by connecting two joint reachable sets, constructed by Theorem \ref{thm-reachset-link}. The third and the fourth figure extend this to all time intervals and then all links, constructed by Theorem \ref{thm-reachset-wholebody}.
+
+![step over demonstration](./assets/step_over.png)
+This figure shows how Digit steps over one low obstacle plotted in red in one walking step, together with the robot reachable set corresponding with the optimal trajectory parameter that is found by the online optimization.
+The robot reachable set is plotted in blue, and is not in collision with the low obstacle.
+
+<!-- {: class="fullwidth"} -->
 
 </div><!-- END METHOD -->
 
@@ -154,14 +142,13 @@ than previous methods. This paper’s contributions are three-fold:
 <div markdown="1" class="content-block grey justify">
 
 # [Simulation Results](#simulation-results)
-## Random Scenarios
-The following videos demonstrate the performance of SPARROWS to other methods in randomly generated hard schenarios.
-In each of these, SPARROWS is able to acheive the desired goal configuration while the others don't.
-ARMTD does stop in a safe configuration, but it gets stuck and fails make it to the goal.
-On the other hand, MPOT and TRAJOPT both stop due to colliding with the environment.
+
+To test the performance of our method, we generate 100 scenarios with 10 high obstacles and 20 low obstacles.
+The overall success rate is 77\% (More results included in Table IV in the paper).
+In each of the demonstration videos below, SafeDigit is able to acheive the desired goal configuration without colliding with any obstacles.
 
 <!-- START RANDOM VIDEOS -->
-<div class="video-container">
+<!-- <div class="video-container">
   <div class="video-item">
     <video
       class="autoplay-in-frame"
@@ -210,91 +197,9 @@ On the other hand, MPOT and TRAJOPT both stop due to colliding with the environm
     </video>
     <p>40 obstacles</p>
   </div>
-</div><!-- END RANDOM VIDEOS -->
+</div> -->
+<!-- END RANDOM VIDEOS -->
 
-
-## Hard Scenarios
-We also handcraft hard scenarios where the arm must go around large obstacles and maneuver through tight spaces.
-SPARROWS' performance on a handful of these scenarios is demonstrated below.
-
-<!-- START HARD VIDEOS -->
-<div class="video-container">
-  <div class="video-item tighter">
-    <video
-      class="autoplay-in-frame"
-      preload="none"
-      disableremoteplayback
-      disablepictureinpicture
-      playsinline
-      muted
-      loop
-      onclick="this.paused ? this.play() : this.pause();"
-      poster="assets/thumb/sparrows_hard_scenarios_2.jpg">
-      <source src="assets/sparrows_hard_scenarios_2.mp4" type="video/mp4">
-      Your browser does not support this video.
-    </video>
-  </div>
-  <div class="video-item tighter">
-    <video
-      class="autoplay-in-frame"
-      preload="none"
-      disableremoteplayback
-      disablepictureinpicture
-      playsinline
-      muted
-      loop
-      onclick="this.paused ? this.play() : this.pause();"
-      poster="assets/thumb/sparrows_hard_scenarios_3.jpg">
-      <source src="assets/sparrows_hard_scenarios_3.mp4" type="video/mp4">
-      Your browser does not support this video.
-    </video>
-  </div>
-  <div class="video-item tighter">
-    <video
-      class="autoplay-in-frame"
-      preload="none"
-      disableremoteplayback
-      disablepictureinpicture
-      playsinline
-      muted
-      loop
-      onclick="this.paused ? this.play() : this.pause();"
-      poster="assets/thumb/sparrows_hard_scenarios_8.jpg">
-      <source src="assets/sparrows_hard_scenarios_8.mp4" type="video/mp4">
-      Your browser does not support this video.
-    </video>
-  </div>
-  <div class="video-item tighter">
-    <video
-      class="autoplay-in-frame"
-      preload="none"
-      disableremoteplayback
-      disablepictureinpicture
-      playsinline
-      muted
-      loop
-      onclick="this.paused ? this.play() : this.pause();"
-      poster="assets/thumb/sparrows_hard_scenarios_4.jpg">
-      <source src="assets/sparrows_hard_scenarios_4.mp4" type="video/mp4">
-      Your browser does not support this video.
-    </video>
-  </div>
-  <div class="video-item tighter">
-    <video
-      class="autoplay-in-frame"
-      preload="none"
-      disableremoteplayback
-      disablepictureinpicture
-      playsinline
-      muted
-      loop
-      onclick="this.paused ? this.play() : this.pause();"
-      poster="assets/thumb/sparrows_hard_scenarios_11.jpg">
-      <source src="assets/sparrows_hard_scenarios_11.mp4" type="video/mp4">
-      Your browser does not support this video.
-    </video>
-  </div>
-</div><!-- END HARD VIDEOS -->
 </div><!-- END RESULTS -->
 
 <div markdown="1" class="justify">
@@ -302,7 +207,8 @@ SPARROWS' performance on a handful of these scenarios is demonstrated below.
 # [Related Projects](#related-projects)
   
 * [Autonomous Robust Manipulation via Optimization with Uncertainty-aware Reachability](https://roahmlab.github.io/armour/)
-* [Reachability-based Trajectory Design with Neural Implicit Safety Constraints](https://roahmlab.github.io/RDF/)
+
+* [Safe Planning for Articulated Robots Using Reachability-based Obstacle Avoidance With Spheres](https://roahmlab.github.io/sparrows/)
 
 <div markdown="1" class="content-block grey justify">
   
@@ -311,9 +217,9 @@ SPARROWS' performance on a handful of these scenarios is demonstrated below.
 This project was developed in [Robotics and Optimization for Analysis of Human Motion (ROAHM) Lab](http://www.roahmlab.com/) at University of Michigan - Ann Arbor.
 
 ```bibtex
-@article{michaux2024sparrows,
-  title={Safe Planning for Articulated Robots Using Reachability-based Obstacle Avoidance With Spheres},
-  author={Jonathan Michaux and Adam Li and Qingyi Chen and Che Chen and Bohao Zhang and Ram Vasudevan},
+@article{michaux2024SafeDigit,
+  title={Provably-Safe, Real-time Planning & Control For Bipedal Robots Using Reachability-Based Trajectory Design},
+  author={Bohao Zhang and Ram Vasudevan},
   journal={ArXiv},
   year={2024},
   volume={abs/2402.08857},
