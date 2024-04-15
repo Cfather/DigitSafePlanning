@@ -51,11 +51,15 @@ links:
 
 <!-- BEGIN DOCUMENT HERE -->
 
+{% include sections/authors %}
+{% include sections/links %}
+
 ---
 
 # [Overview](#overview)
 
 ![reachable set construction](./assets/SafeDigit-Summary-3.0.png)
+{: class="fullwidth"}
 
 <!-- BEGIN OVERVIEW VIDEOS -->
 <!-- <div class="fullwidth video-container" style="flex-wrap:nowrap; padding: 0 0.2em">
@@ -128,13 +132,15 @@ This paper's contributions are four-fold:
 4. An optimization-based planning algorithm that is illustrated in simulation to enable real-time safe navigation of high dimensional biped through complex environments. 
 
 ![reachable set construction](./assets/reachset-demo.jpg)
+{: class="fullwidth"}
+
 This figure demonstrates how we construct the reachable set on the lower limbs of Digit step by step. The first figure shows the reachable set of two joints in one time interval, constructed by Theorem \ref{thm-reachset-joint}. The second figure shows the reachable set of the link by connecting two joint reachable sets, constructed by Theorem \ref{thm-reachset-link}. The third and the fourth figure extend this to all time intervals and then all links, constructed by Theorem \ref{thm-reachset-wholebody}.
 
 ![step over demonstration](./assets/step_over.png)
+{: class="fullwidth"}
+
 This figure shows how Digit steps over one low obstacle plotted in red in one walking step, together with the robot reachable set corresponding with the optimal trajectory parameter that is found by the online optimization.
 The robot reachable set is plotted in blue, and is not in collision with the low obstacle.
-
-<!-- {: class="fullwidth"} -->
 
 </div><!-- END METHOD -->
 
