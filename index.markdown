@@ -164,7 +164,8 @@ In each of the demonstration videos below, SafeDigit is able to acheive the desi
       playsinline
       muted
       loop
-      onclick="this.paused ? this.play() : this.pause();">
+      onclick="this.paused ? this.play() : this.pause();"
+      poster="assets/result_15.png">
       <source src="https://github.com/Cfather/DigitSafePlanning/assets/41474684/94da9bc5-3682-4018-a1bc-5d3b125f3a4d" type="video/mp4">
       Your browser does not support this video.
     </video>
@@ -178,7 +179,8 @@ In each of the demonstration videos below, SafeDigit is able to acheive the desi
       playsinline
       muted
       loop
-      onclick="this.paused ? this.play() : this.pause();">
+      onclick="this.paused ? this.play() : this.pause();"
+      poster="assets/result_21.png">
       <source src="https://github.com/Cfather/DigitSafePlanning/assets/41474684/e7adff7b-5764-4fcf-932d-a135ff689ee0" type="video/mp4">
       Your browser does not support this video.
     </video>
@@ -192,7 +194,8 @@ In each of the demonstration videos below, SafeDigit is able to acheive the desi
       playsinline
       muted
       loop
-      onclick="this.paused ? this.play() : this.pause();">
+      onclick="this.paused ? this.play() : this.pause();"
+      poster="assets/result_64.png">
       <source src="https://github.com/Cfather/DigitSafePlanning/assets/41474684/76bfa8e5-ed90-416b-b1b1-3321ce12194b" type="video/mp4">
       Your browser does not support this video.
     </video>
@@ -206,12 +209,14 @@ In each of the demonstration videos below, SafeDigit is able to acheive the desi
       playsinline
       muted
       loop
-      onclick="this.paused ? this.play() : this.pause();">
+      onclick="this.paused ? this.play() : this.pause();"
+      poster="assets/result_70.png">
       <source src="https://github.com/Cfather/DigitSafePlanning/assets/41474684/0003c6ed-3eac-458f-b6f8-5ea734122ac8" type="video/mp4">
       Your browser does not support this video.
     </video>
   </div>
-</div> --><!-- END RANDOM VIDEOS -->
+</div><!-- END RANDOM VIDEOS -->
+
 </div><!-- END RESULTS -->
 
 <div markdown="1" class="justify">
