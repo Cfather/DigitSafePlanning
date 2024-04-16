@@ -211,9 +211,7 @@ In each of the demonstration videos below, SafeDigit is able to acheive the desi
       Your browser does not support this video.
     </video>
   </div>
-</div> -->
-<!-- END RANDOM VIDEOS -->
-
+</div> --><!-- END RANDOM VIDEOS -->
 </div><!-- END RESULTS -->
 
 <div markdown="1" class="justify">
