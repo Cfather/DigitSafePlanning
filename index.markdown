@@ -234,7 +234,7 @@ In each of the demonstration videos below, SafeDigit is able to acheive the desi
 This project was developed in [Robotics and Optimization for Analysis of Human Motion (ROAHM) Lab](http://www.roahmlab.com/) at University of Michigan - Ann Arbor.
 
 ```bibtex
-@article{michaux2024SafeDigit,
+@article{zhang2024SafeDigit,
   title={Provably-Safe, Real-time Planning & Control For Bipedal Robots Using Reachability-Based Trajectory Design},
   author={Bohao Zhang and Ram Vasudevan},
   journal={ArXiv},
