@@ -150,7 +150,7 @@ The robot reachable set is plotted in blue, and is not in collision with the low
 # [Simulation Results](#simulation-results)
 
 To test the performance of our method, we generate 100 scenarios with 10 high obstacles and 20 low obstacles.
-The overall success rate is 77\% (More results included in Table IV in the paper).
+The overall success rate is 77% (More results included in Table IV in the paper).
 In each of the demonstration videos below, SafeDigit is able to acheive the desired goal configuration without colliding with any obstacles.
 
 <!-- START RANDOM VIDEOS -->
@@ -212,7 +212,7 @@ In each of the demonstration videos below, SafeDigit is able to acheive the desi
     </video>
   </div>
 </div> -->
-<!-- END RANDOM VIDEOS
+<!-- END RANDOM VIDEOS -->
 
 </div><!-- END RESULTS -->
 
