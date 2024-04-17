@@ -44,7 +44,7 @@ links:
   - icon: github
     icon-library: simpleicons
     text: Code (Planning)
-    url: https://github.com/roahmlab/SafeDigit
+    url: https://github.com/roahmlab/DigitSafePlanning
 
 # End Front Matter
 ---
@@ -166,19 +166,15 @@ In each of the demonstration videos below, SafeDigit is able to acheive the desi
       loop
       onclick="this.paused ? this.play() : this.pause();"
       poster="assets/result_15.png">
-      <source src="https://github.com/Cfather/DigitSafePlanning/assets/41474684/94da9bc5-3682-4018-a1bc-5d3b125f3a4d" type="video/mp4">
+      <source src="https://www.youtube.com/watch?v=-9EM5_VFlt8" type="video/mp4">
       Your browser does not support this video.
     </video> -->
     <video
       class="autoplay-in-frame"
-      preload="none"
-      disableremoteplayback
-      disablepictureinpicture
-      playsinline
       muted
-      loop
-      onclick="this.paused ? this.play() : this.pause();"
-      src="https://github.com/Cfather/DigitSafePlanning/assets/41474684/94da9bc5-3682-4018-a1bc-5d3b125f3a4d">
+      loop>
+      <source src="https://www.youtube.com/watch?v=-9EM5_VFlt8" type="video/mp4">
+      Your browser does not support this video.
     </video>
   </div>
   <div class="video-item">
