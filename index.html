@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>Provably-Safe, Real-time Planning & Control For Bipedal Robots Using Reachability-Based Trajectory Design</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -56,17 +56,17 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://cfather.github.io/jimzhang.github.io/" target="_blank">Bohao Zhang</a><sup>*</sup>,</span>
                 <span class="author-block">
                   <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://www.roahmlab.com/ram-personal" target="_blank">Ram Vasudevan</a>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">All authors affiliated with the Robotics Institute of the University of Michigan, Ann Arbor.</span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
@@ -83,7 +83,7 @@
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -91,21 +91,32 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/roahmlab/IDTO" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code (Trajectory Optimization)</span>
+                  </a>
+                </span>
+
+                  <!-- Another Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/Cfather/DigitSafePlanning" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Planning)</span>
                   </a>
                 </span>
 
                 <!-- ArXiv abstract Link -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -113,7 +124,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
             </div>
           </div>
         </div>
@@ -148,7 +159,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            To operate robustly in uncertain environments with a finite sensor horizon, bipedal robots must be able to perform receding horizon trajectory planning in concert with rapid control synthesis. 
+            Unfortunately, creating safe and dynamically-feasible trajectories for high-dimensional bipedal robotic systems in real-time is challenging. 
+            As a result, most existing approaches make an undesirable trade-off between model fidelity and planning speed thereby sacrificing safety. 
+            To avoid this undesirable trade-off, this paper describes a method for offline generation of a continuum of multi-step reference trajectories that can then be optimizing over at run-time to identify trajectories 
+            that can be followed by a bipedal walking robot in a provably safe fashion (i.e., without running into obstacles or falling). 
+            To accomplish this objective, this paper presents a robust controller that provides an ultimate bound on the maximum tracking error while following any reference trajectory. 
+            At runtime and during each planning , the proposed method constructs a reachable set of the entire robot and intersects it with obstacles to generate sub-differentiable and provably conservative collision avoidance constraints. 
+            This enables trajectory optimization for an arbitrary cost function subject to these constraints. This proposed method consistently outperforms state-of-the-art methods during simulation experiments on a 20-degree-of-freedom bipedal robot Digit.
           </p>
         </div>
       </div>
@@ -260,7 +278,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,7 +288,7 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
