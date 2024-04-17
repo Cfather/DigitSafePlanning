@@ -133,29 +133,6 @@
   </div>
 </section>
 
-
-<!-- Summary figure-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video> -->
-      <img src="assets/SafeDigit-Summary-3.0.png" width="90%" height="90%">
-
-      <h2 class="subtitle has-text-justified">
-        As illustrated in the summary figure, this paper proposes a receding horizon control synthesis method that constructs a trajectory-parameterized reachable set of a bipedal robot over one walking step. 
-        During online operation, this paper describes how to construct a numerical optimization problem to identify a trajectory that ensures that the biped does not fall over or collide with any obstacles. 
-        Due to the application of the reachable set within the optimization problem, any feasible solution to the optimization problem can be realized on the biped in a provably safe fashion.
-        In particular, this paper describes the construction and application of a robust control input to track numerically computed trajectories with bounded tracking error under model uncertainty. 
-        To ensure that this optimization problem can be solved rapidly, this paper describes how to compute numerical derivatives for all relevant components of the optimization problem. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End summary figure -->
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -180,45 +157,67 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- Summary figure-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video> -->
+      <img src="assets/SafeDigit-Summary-3.0.png" width="90%" height="90%">
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
+      <h2 class="subtitle has-text-justified">
+        As illustrated in the summary figure, this paper proposes a receding horizon control synthesis method that constructs a trajectory-parameterized reachable set of a bipedal robot over one walking step. 
+        During online operation, this paper describes how to construct a numerical optimization problem to identify a trajectory that ensures that the biped does not fall over or collide with any obstacles. 
+        Due to the application of the reachable set within the optimization problem, any feasible solution to the optimization problem can be realized on the biped in a provably safe fashion.
+        In particular, this paper describes the construction and application of a robust control input to track numerically computed trajectories with bounded tracking error under model uncertainty. 
+        To ensure that this optimization problem can be solved rapidly, this paper describes how to compute numerical derivatives for all relevant components of the optimization problem. 
       </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End summary figure -->
+
+<!-- Reachset figure-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video> -->
+      <img src="assets/reachset-demo.jpg" width="90%" height="90%">
+
+      <h2 class="subtitle has-text-justified">
+        This figure demonstrates how we construct the reachable set on the lower limbs of Digit step by step. 
+        The first figure shows the reachable set of two joints in one time interval, constructed by Theorem \ref{thm-reachset-joint}. 
+        The second figure shows the reachable set of the link by connecting two joint reachable sets, constructed by Theorem \ref{thm-reachset-link}. 
+        The third and the fourth figure extend this to all time intervals and then all links, constructed by Theorem \ref{thm-reachset-wholebody}.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End reachset figure -->
+
+<!-- Stepover figure-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video> -->
+      <img src="assets/step_over.png" width="90%" height="90%">
+
+      <h2 class="subtitle has-text-justified">
+        This figure shows how Digit steps over one low obstacle plotted in red in one walking step, together with the robot reachable set corresponding with the optimal trajectory parameter that is found by the online optimization.
+        The robot reachable set is plotted in blue, and is not in collision with the low obstacle.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End stepover figure -->
 
 <!-- Video carousel -->
 <section class="hero is-small">
@@ -229,28 +228,28 @@
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
             <!-- Your video file here -->
-            <source src="https://github.com/Cfather/DigitSafePlanning/assets/41474684/94da9bc5-3682-4018-a1bc-5d3b125f3a4d"
+            <source src="https://github-production-user-asset-6210df.s3.amazonaws.com/41474684/322775192-94da9bc5-3682-4018-a1bc-5d3b125f3a4d.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240417%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240417T054200Z&X-Amz-Expires=300&X-Amz-Signature=b0a7474865d1bd52e78b6fb9a98ed0f9dbae156b846652e9e5b70a9445839671&X-Amz-SignedHeaders=host&actor_id=41474684&key_id=0&repo_id=784068442"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
             <!-- Your video file here -->
-            <source src="https://github.com/Cfather/DigitSafePlanning/assets/41474684/e7adff7b-5764-4fcf-932d-a135ff689ee0"
+            <source src="https://github-production-user-asset-6210df.s3.amazonaws.com/41474684/322775294-e7adff7b-5764-4fcf-932d-a135ff689ee0.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240417%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240417T054227Z&X-Amz-Expires=300&X-Amz-Signature=4f0cc5ceff66d2a5ae1cfe92a2a4cfc1a52c1fbfd1f346e452e6921530810f6f&X-Amz-SignedHeaders=host&actor_id=41474684&key_id=0&repo_id=784068442"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
             <!-- Your video file here -->
-            <source src="https://github.com/Cfather/DigitSafePlanning/assets/41474684/76bfa8e5-ed90-416b-b1b1-3321ce12194b"
+            <source src="https://github-production-user-asset-6210df.s3.amazonaws.com/41474684/322775497-76bfa8e5-ed90-416b-b1b1-3321ce12194b.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240417%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240417T054239Z&X-Amz-Expires=300&X-Amz-Signature=676f7959220685c8ee2b2786759518b92c097a739365a741a4ba31858f676ab8&X-Amz-SignedHeaders=host&actor_id=41474684&key_id=0&repo_id=784068442"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video4">
           <video poster="" id="video4" autoplay controls muted loop height="100%">\
             <!-- Your video file here -->
-            <source src="https://github.com/Cfather/DigitSafePlanning/assets/41474684/0003c6ed-3eac-458f-b6f8-5ea734122ac8"
+            <source src="https://github-production-user-asset-6210df.s3.amazonaws.com/41474684/322775589-0003c6ed-3eac-458f-b6f8-5ea734122ac8.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240417%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240417T054252Z&X-Amz-Expires=300&X-Amz-Signature=6335340935251f7ce85121428f896c67f1806ac6f6bf742a5e9fe58e8ff01a21&X-Amz-SignedHeaders=host&actor_id=41474684&key_id=0&repo_id=784068442"
             type="video/mp4">
           </video>
         </div>
